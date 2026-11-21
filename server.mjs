@@ -68,6 +68,22 @@ const server = http.createServer((req, res) => {
   tryServe(filePath);
 });
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+let currentPort = Number(PORT);
+
+function startServer(port) {
+  server.listen(port, '0.0.0.0', () => {
+    console.log(`Server running at http://localhost:${port}/`);
+  });
+}
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.log(`Port ${currentPort} is in use, trying next port...`);
+    currentPort += 1;
+    startServer(currentPort);
+  } else {
+    console.error('Server error:', err);
+  }
 });
+
+startServer(currentPort);

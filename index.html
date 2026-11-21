@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SUSTAIN-IQ 2026</title>
-  
+
   <!-- Pixel & Monospace Fonts for true Minecraft/Retro Voxel Aesthetic -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -40,13 +45,16 @@
     ::-webkit-scrollbar {
       width: 6px;
     }
+
     ::-webkit-scrollbar-track {
       background: #000;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #2a2a2a;
       border-radius: 3px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #444;
     }
@@ -57,7 +65,8 @@
     #hero-track {
       position: relative;
       width: 100%;
-      height: 440vh; /* Set dynamically in updateDimensions() */
+      height: 440vh;
+      /* Set dynamically in updateDimensions() */
     }
 
     #hero-sticky {
@@ -152,7 +161,8 @@
       top: -6%;
       left: -10%;
       width: 120%;
-      height: 76%; /* Ends right behind the grass/dirt horizon */
+      height: 76%;
+      /* Ends right behind the grass/dirt horizon */
       object-fit: cover;
       object-position: center top;
       z-index: 1;
@@ -186,7 +196,7 @@
       width: 100%;
       height: auto;
       z-index: 5;
-      filter: drop-shadow(0 15px 24px rgba(0,0,0,0.55));
+      filter: drop-shadow(0 15px 24px rgba(0, 0, 0, 0.55));
       pointer-events: none;
       will-change: transform;
       transform: translate3d(0, 0, 30px) scale(1.02);
@@ -196,7 +206,8 @@
        Positioned so its BOTTOM rests directly ON TOP of the cliff cross-section */
     .layer-forest-top {
       position: absolute;
-      bottom: 9.6vw; /* Bottom of forest island connects seamlessly on top of cliff */
+      bottom: 9.6vw;
+      /* Bottom of forest island connects seamlessly on top of cliff */
       left: 0;
       width: 100%;
       height: auto;
@@ -217,7 +228,7 @@
       width: clamp(48px, 5.2vw, 78px);
       height: auto;
       z-index: 4;
-      filter: drop-shadow(6px 14px 10px rgba(0,0,0,0.45));
+      filter: drop-shadow(6px 14px 10px rgba(0, 0, 0, 0.45));
       pointer-events: none;
       will-change: transform;
       transform: translate3d(0, 0, 45px);
@@ -242,11 +253,11 @@
       font-weight: 700;
       color: #FFFFFF;
       letter-spacing: 1.5px;
-      text-shadow: 
-        0 2px 0 #2b2b2b, 
-        0 4px 0 #1f1f1f, 
-        0 6px 0 #121212, 
-        0 12px 20px rgba(0,0,0,0.7);
+      text-shadow:
+        0 2px 0 #2b2b2b,
+        0 4px 0 #1f1f1f,
+        0 6px 0 #121212,
+        0 12px 20px rgba(0, 0, 0, 0.7);
       pointer-events: none;
       will-change: transform;
     }
@@ -263,7 +274,7 @@
       width: clamp(320px, 44vw, 580px);
       max-width: 88vw;
       z-index: 6;
-      filter: drop-shadow(0 20px 28px rgba(0,0,0,0.6));
+      filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.6));
       will-change: transform;
       user-select: text;
       -webkit-user-select: text;
@@ -292,7 +303,7 @@
       font-weight: 700;
       line-height: 1.55;
       font-size: clamp(0.72rem, 1.0vw, 0.90rem);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
       letter-spacing: 0.1px;
     }
 
@@ -304,8 +315,10 @@
       z-index: 4;
       width: 100%;
       min-height: 140vh;
-      margin-top: -18%; /* Pull bedrock up behind floating voxel island cross section */
-      padding-bottom: 6rem; /* Clean breathing room for next underground section */
+      margin-top: -18%;
+      /* Pull bedrock up behind floating voxel island cross section */
+      padding-bottom: 6rem;
+      /* Clean breathing room for next underground section */
       background-color: #121216;
       overflow-x: hidden;
       overflow-y: visible;
@@ -348,7 +361,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: calc(100% + 200px); /* Headroom for upward scroll animation */
+      height: calc(100% + 200px);
+      /* Headroom for upward scroll animation */
       object-fit: cover;
       object-position: center top;
       z-index: 2;
@@ -362,7 +376,8 @@
     .cavern-heading {
       position: relative;
       z-index: 4;
-      padding-top: clamp(480px, 28vw, 560px); /* Cleanly below lowest hanging stalactite tip */
+      padding-top: clamp(480px, 28vw, 560px);
+      /* Cleanly below lowest hanging stalactite tip */
       margin: 0 0 2rem 0;
       text-align: center;
       font-family: 'Press Start 2P', 'Silkscreen', monospace;
@@ -370,8 +385,8 @@
       font-weight: 700;
       color: #FFFFFF;
       letter-spacing: 2px;
-      text-shadow: 
-        0 4px 0 #1a1a1a, 
+      text-shadow:
+        0 4px 0 #1a1a1a,
         0 0 24px rgba(255, 190, 60, 0.55);
       transform: translateZ(20px);
       will-change: transform;
@@ -384,7 +399,7 @@
       margin: 1.8rem auto 0;
       z-index: 5;
       transform: translateZ(35px);
-      filter: drop-shadow(0 25px 32px rgba(0,0,0,0.85));
+      filter: drop-shadow(0 25px 32px rgba(0, 0, 0, 0.85));
       will-change: transform;
     }
 
@@ -397,7 +412,8 @@
 
     .cavern-banner-content {
       position: absolute;
-      inset: 14% 12%; /* Inset safely inside stone arch frame and away from lanterns */
+      inset: 14% 12%;
+      /* Inset safely inside stone arch frame and away from lanterns */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -415,16 +431,16 @@
       border: 3px solid #3A2212;
       border-radius: 4px;
       padding: 0.70rem 0.90rem;
-      box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.45), 
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.45),
         inset 0 1px 0 rgba(255, 255, 255, 0.55);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .highlight-card:hover {
       transform: translateY(-2px);
-      box-shadow: 
-        0 8px 18px rgba(0, 0, 0, 0.6), 
+      box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.6),
         inset 0 1px 0 rgba(255, 255, 255, 0.75);
     }
 
@@ -457,7 +473,374 @@
       margin: 0;
     }
 
+    /* ==========================================================================
+       4. AMETHYST GEODE FAQ SECTION (Geode Cave + 3D Crystals + Banner)
+       ========================================================================== */
+    #faq {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      min-height: 195vh;
+      margin-top: -6rem;
+      /* Pull geode ceiling seamlessly up behind cavern bottom */
+      padding-bottom: 20vh;
+      background-color: #0b0713;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+
+    .geode-stage {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      overflow: visible;
+    }
+
+    .geode-world {
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* Z-Plane 1: Geode Cave Background */
+    .geode-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 1;
+      transform: translateZ(-50px) scale(1.1);
+      pointer-events: none;
+      filter: brightness(1.1) contrast(1.1);
+      will-change: transform;
+    }
+
+    /* Z-Plane 2: Top Ceiling Overhang (Connecting Cavern to Geode) */
+    .geode-ceiling {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 3;
+      pointer-events: none;
+      transform: translateZ(15px);
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.75));
+      will-change: transform;
+    }
+
+    /* Z-Plane 3: Section Heading */
+    .geode-heading {
+      position: relative;
+      z-index: 4;
+      padding-top: calc(33.32vw + 35px); /* Positioned cleanly below the full untrimmed crystal stalactites */
+      margin: 0 0 2.5rem 0;
+      text-align: center;
+      font-family: 'Press Start 2P', 'Silkscreen', monospace;
+      font-size: clamp(1.4rem, 3.0vw, 2.6rem);
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+      text-shadow:
+        0 4px 0 #1f0d38,
+        0 0 24px rgba(186, 104, 255, 0.8),
+        0 0 45px rgba(142, 68, 230, 0.55);
+      transform: translateZ(25px);
+      will-change: transform;
+    }
+
+    /* 3D Floating Crystal Elements: Left & Right Clusters */
+    .geode-cluster-left {
+      position: absolute;
+      top: calc(33.32vw + 160px);
+      left: max(-40px, calc(50% - 680px));
+      width: clamp(260px, 28vw, 420px);
+      aspect-ratio: 887 / 887;
+      height: auto;
+      z-index: 3;
+      transform: translateZ(10px);
+      pointer-events: none;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+      will-change: transform;
+    }
+
+    .geode-cluster-right {
+      position: absolute;
+      top: calc(33.32vw + 140px);
+      right: max(-30px, calc(50% - 670px));
+      width: clamp(240px, 26vw, 390px);
+      aspect-ratio: 760 / 817;
+      height: auto;
+      z-index: 3;
+      transform: translateZ(5px);
+      pointer-events: none;
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
+      will-change: transform;
+    }
+
+    /* Z-Plane 4: Amethyst Crystal Banner */
+    .geode-banner-wrapper {
+      position: relative;
+      width: min(90vw, 780px);
+      aspect-ratio: 1433 / 1098;
+      margin: 3.2rem auto 0;
+      /* Generous spacing so HAVE ANY QUESTIONS? is prominently visible */
+      z-index: 5;
+      transform: translateZ(35px);
+      filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 25px rgba(155, 77, 224, 0.35));
+      will-change: transform;
+    }
+
+    .geode-banner-bg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+    }
+
+    .geode-banner-content {
+      position: absolute;
+      inset: 13% 10% 11% 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1.2rem;
+    }
+
+    .geode-banner-text {
+      font-family: 'Silkscreen', 'Press Start 2P', monospace;
+      font-size: clamp(0.72rem, 1.2vw, 1.05rem);
+      font-weight: 700;
+      color: #ECE5F8;
+      line-height: 1.7;
+      max-width: 90%;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 10px rgba(186, 104, 255, 0.4);
+      margin: 0;
+    }
+
+    /* Wooden FAQ Button & Enderman */
+    .geode-faq-btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.3rem;
+    }
+
+    .geode-faq-btn {
+      display: inline-block;
+      padding: 0.75rem 2.2rem;
+      background: #734827;
+      border: 4px solid #361f0d;
+      border-top-color: #9a6338;
+      border-left-color: #9a6338;
+      border-radius: 4px;
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+      color: #FFFFFF;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      box-shadow:
+        0 6px 14px rgba(0, 0, 0, 0.7),
+        inset 2px 2px 0 rgba(255, 255, 255, 0.25),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.4);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+
+    .geode-faq-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      background: #8b5830;
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(255, 180, 80, 0.5),
+        inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+        inset -2px -2px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    .geode-faq-btn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .enderman-peek {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.65rem;
+      vertical-align: middle;
+    }
+
+    .enderman-head {
+      width: 28px;
+      height: 38px;
+      background: #121016;
+      border: 2px solid #000;
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .enderman-eye {
+      position: absolute;
+      top: 14px;
+      width: 7px;
+      height: 3px;
+      background: #de6fff;
+      box-shadow: 0 0 6px #c440ff, 0 0 10px rgba(196, 64, 255, 0.7);
+    }
+
+    .enderman-eye.left {
+      left: 3px;
+    }
+
+    .enderman-eye.right {
+      right: 3px;
+    }
+
+    /* Z-Plane 5: Floating Magic Crystal Cube in FRONT of banner */
+    .geode-floating-cube {
+      position: absolute;
+      bottom: -25px;
+      left: 20px;
+      width: clamp(90px, 11vw, 150px);
+      height: auto;
+      z-index: 7;
+      transform: translateZ(65px);
+      pointer-events: none;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 20px rgba(186, 85, 255, 0.7));
+      will-change: transform;
+    }
+
+    /* Z-Plane 6: Bottom Rulebook Transition (Ledge below FAQ banner leading to next page) */
+    .geode-transition {
+      position: relative;
+      width: min(96vw, 1100px);
+      margin: 3.5rem auto 0;
+      height: auto;
+      display: block;
+      z-index: 6;
+      pointer-events: none;
+      transform: translateZ(20px);
+      filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.75));
+      will-change: transform;
+    }
+
+    /* Interactive Pixel FAQ Modal */
+    .faq-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(10, 6, 18, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .faq-modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .faq-modal-card {
+      background: #1e132c;
+      border: 4px solid #5a3086;
+      border-radius: 6px;
+      width: min(92vw, 650px);
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(186, 104, 255, 0.4);
+      overflow: hidden;
+      transform: scale(0.94);
+      transition: transform 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .faq-modal-overlay.active .faq-modal-card {
+      transform: scale(1);
+    }
+
+    .faq-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.0rem 1.4rem;
+      background: #2a1940;
+      border-bottom: 3px solid #5a3086;
+    }
+
+    .faq-modal-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+      color: #fff;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    .faq-modal-close {
+      background: #734827;
+      border: 2px solid #361f0d;
+      color: #fff;
+      font-size: 1.4rem;
+      line-height: 1;
+      width: 32px;
+      height: 32px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .faq-modal-close:hover {
+      background: #9a6338;
+    }
+
+    .faq-modal-body {
+      padding: 1.2rem 1.4rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.0rem;
+    }
+
+    .faq-item {
+      background: rgba(45, 26, 68, 0.7);
+      border: 2px solid #48256e;
+      border-radius: 4px;
+      padding: 0.9rem 1.0rem;
+    }
+
+    .faq-question {
+      font-family: 'Silkscreen', monospace;
+      font-size: clamp(0.75rem, 1.0vw, 0.88rem);
+      color: #f2e2ff;
+      margin: 0 0 0.4rem 0;
+    }
+
+    .faq-answer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(0.68rem, 0.85vw, 0.80rem);
+      color: #d1bfe3;
+      margin: 0;
+      line-height: 1.5;
+    }
+
     @media (max-width: 768px) {
+
       /* Hero Section Mobile */
       .brand-logo {
         width: min(85vw, 340px);
@@ -467,10 +850,12 @@
       #about {
         min-height: 100vh;
       }
+
       .about-stage {
         min-height: 100vh;
         height: 100vh;
       }
+
       .layer-sky {
         top: 0;
         left: 0;
@@ -481,6 +866,7 @@
         mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);
       }
+
       .layer-headline {
         top: 3.2vh;
         font-size: clamp(1.05rem, 4.4vw, 1.35rem);
@@ -488,24 +874,29 @@
         padding: 0 16px;
         width: 100%;
       }
+
       .layer-bee {
         left: 7%;
         top: 11vh;
         width: clamp(42px, 11vw, 50px);
         z-index: 7;
       }
+
       .layer-parchment-wrapper {
         top: 17vh;
         width: min(92vw, 365px);
       }
+
       .parchment-text-container {
         inset: 10% 8% 11% 8%;
       }
+
       .parchment-text {
         font-size: clamp(0.58rem, 2.3vw, 0.68rem);
         line-height: 1.45;
         font-weight: 700;
       }
+
       .island-container {
         left: 50%;
         bottom: 0;
@@ -514,9 +905,11 @@
         height: 52vh;
         transform: translate3d(-50%, 0, 0);
       }
+
       .layer-forest-top {
         bottom: 11vw;
       }
+
       .layer-cliff-base {
         bottom: -5vw;
       }
@@ -527,25 +920,30 @@
         min-height: 145vh;
         padding-bottom: 25vh;
       }
+
       .cavern-bedrock-bg {
         filter: brightness(1.75) contrast(1.25);
       }
+
       .cavern-heading {
         padding-top: clamp(85px, 13vh, 120px);
         font-size: clamp(1.2rem, 5.2vw, 1.6rem);
         margin: 0 0 1.2rem 0;
       }
+
       .cavern-walls-overlay {
         object-fit: fill;
         width: 100%;
         height: 100%;
         z-index: 2;
       }
+
       .cavern-banner-wrapper {
         width: min(94vw, 390px);
         margin: 1.0rem auto 0;
         z-index: 5;
       }
+
       .cavern-banner-bg {
         position: absolute;
         inset: 0;
@@ -553,32 +951,138 @@
         height: 100%;
         object-fit: fill;
       }
+
       .cavern-banner-content {
         position: relative;
         inset: auto;
         padding: 13% 7% 11% 7%;
       }
+
       .highlights-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.50rem 0.60rem;
       }
+
       .highlight-card {
         padding: 0.52rem 0.48rem;
         border: 2px solid #3A2212;
       }
+
       .highlight-title {
         font-size: clamp(0.56rem, 2.3vw, 0.66rem);
         line-height: 1.25;
         margin-bottom: 0.2rem;
         gap: 0.25rem;
       }
+
       .highlight-desc {
         font-size: clamp(0.50rem, 2.0vw, 0.58rem);
         line-height: 1.35;
       }
+
+      /* Geode FAQ Section Mobile */
+      #faq {
+        margin-top: -24vh;
+        min-height: 185vh;
+        padding-bottom: 25vh;
+      }
+
+      .geode-bg {
+        filter: brightness(1.25) contrast(1.15);
+      }
+
+      .geode-ceiling {
+        aspect-ratio: 1900 / 633;
+        height: auto;
+      }
+
+      .geode-heading {
+        padding-top: calc(33.32vw + 25px);
+        font-size: clamp(1.15rem, 5.0vw, 1.55rem);
+        margin: 0 0 1.2rem 0;
+      }
+
+      .geode-banner-wrapper {
+        width: min(94vw, 390px);
+        aspect-ratio: 1433 / 1098;
+        margin: 1.8rem auto 0;
+        z-index: 5;
+      }
+
+      .geode-banner-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
+      .geode-banner-content {
+        position: relative;
+        inset: auto;
+        padding: 13% 8% 12% 8%;
+        gap: 0.8rem;
+      }
+
+      .geode-banner-text {
+        font-size: clamp(0.58rem, 2.3vw, 0.68rem);
+        line-height: 1.5;
+        max-width: 96%;
+      }
+
+      .geode-faq-btn {
+        padding: 0.55rem 1.6rem;
+        font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+      }
+
+      .enderman-head {
+        width: 22px;
+        height: 30px;
+      }
+
+      .enderman-eye {
+        top: 11px;
+        width: 5px;
+        height: 2.5px;
+      }
+
+      .enderman-eye.left {
+        left: 2px;
+      }
+
+      .enderman-eye.right {
+        right: 2px;
+      }
+
+      .geode-cluster-left {
+        top: calc(33.32vw + 60px);
+        left: -35px;
+        width: 155px;
+        opacity: 0.65;
+      }
+
+      .geode-cluster-right {
+        top: calc(33.32vw + 50px);
+        right: -30px;
+        width: 145px;
+        opacity: 0.65;
+      }
+
+      .geode-floating-cube {
+        bottom: -15px;
+        left: 5px;
+        width: 75px;
+      }
+
+      .geode-transition {
+        width: 100%;
+        margin: 2.2rem auto 0;
+        max-height: 25vh;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ========================================================================
@@ -599,55 +1103,37 @@
   <section id="about" class="about-section">
     <div class="about-stage" id="aboutStage">
       <div class="about-world" id="aboutWorld">
-        
+
         <!-- Z-Plane 1: Natural Blue Minecraft Sky Background (Clouds & Sunbeams) -->
-        <img 
-          src="assets/amethyst-design-sky-CVJIhP7p.webp" 
-          alt="Minecraft Sky Background" 
-          class="layer-sky" 
-          id="layerSky"
-        />
+        <img src="assets/amethyst-design-sky-CVJIhP7p.webp" alt="Minecraft Sky Background" class="layer-sky"
+          id="layerSky" />
 
         <!-- Island Composite: Bottom of Forest Island Placed On Top of Cliff Cross-Section -->
         <div class="island-container" id="islandContainer">
           <!-- Z-Plane 2: Island Base Stone Cliff Cross-Section -->
-          <img 
-            src="assets/floating-voxel-island-cross-section-BtuZU1Az.webp" 
-            alt="Voxel Island Stone Cliff Base" 
-            class="layer-cliff-base" 
-            id="layerCliffBase"
-          />
+          <img src="assets/floating-voxel-island-cross-section-BtuZU1Az.webp" alt="Voxel Island Stone Cliff Base"
+            class="layer-cliff-base" id="layerCliffBase" />
 
           <!-- Z-Plane 3: Island Top Forest Trees & Grass (Bottom sits on top of cliff) -->
-          <img 
-            src="assets/forest-island-current-W9KxXGzR.webp" 
-            alt="Forest Trees and Grass" 
-            class="layer-forest-top" 
-            id="layerForestTop"
-          />
+          <img src="assets/forest-island-current-W9KxXGzR.webp" alt="Forest Trees and Grass" class="layer-forest-top"
+            id="layerForestTop" />
         </div>
 
         <!-- Z-Plane 4: Animated 3D-Floating Bee (Hovering to the left of the parchment) -->
-        <img 
-          src="assets/morning-bee-BSFy0Spy.gif" 
-          alt="Morning Bee" 
-          class="layer-bee" 
-          id="layerBee"
-        />
+        <img src="assets/morning-bee-BSFy0Spy.gif" alt="Morning Bee" class="layer-bee" id="layerBee" />
 
         <!-- Z-Plane 5: Extruded 3D Pixel Headline (Centered at top) -->
         <h2 class="layer-headline" id="layerHeadline">Mine Ideas, Craft the Future.</h2>
 
         <!-- Z-Plane 6: Pop-Out Parchment Scroll Card (Centered midground, resting on grass) -->
         <div class="layer-parchment-wrapper" id="layerParchment">
-          <img 
-            src="assets/parchment_card-C6HGbFMJ.webp" 
-            alt="Parchment Card" 
-            class="parchment-bg" 
-          />
+          <img src="assets/parchment_card-C6HGbFMJ.webp" alt="Parchment Card" class="parchment-bg" />
           <div class="parchment-text-container">
             <p class="parchment-text">
-              SUSTAIN-IQ 2026 is a 24-hour national-level multidisciplinary sustainability hackathon organized by the Innovators & Visionaries Club (IVC) at Vidyavardhaka College of Engineering, Mysuru, in collaboration with inunity. Unite with 80 finalist teams across 4 challenge domains to engineer practical, measurable solutions for people and the planet.
+              SUSTAIN-IQ 2026 is a 24-hour national-level multidisciplinary sustainability hackathon organized by the
+              Innovators & Visionaries Club (IVC) at Vidyavardhaka College of Engineering, Mysuru, in collaboration with
+              inunity. Unite with 80 finalist teams across 4 challenge domains to engineer practical, measurable
+              solutions for people and the planet.
             </p>
           </div>
         </div>
@@ -663,32 +1149,20 @@
     <div class="cavern-stage" id="cavernStage">
       <div class="cavern-world" id="cavernWorld">
 
-        <!-- Z-Plane 1: Deep Cavern Bedrock Background -->
-        <img 
-          src="assets/2/bedrock.webp" 
-          alt="Deep Bedrock Wall" 
-          class="cavern-bedrock-bg" 
-          id="cavernBedrock"
-        />
+        <!-- Z-Plane 1: Deep Cavern Background -->
+        <img src="assets/2/amethyst-design-cavebg-DyV50eZx.webp" alt="Deep Cavern Wall with Glowing Ores"
+          class="cavern-bedrock-bg" id="cavernBedrock" />
 
         <!-- Z-Plane 2: Cavern Side Walls with Torches & Ores (Framing Left & Right) -->
-        <img 
-          src="assets/2/amethyst-design-walls-MWl9p3OZ.webp" 
-          alt="Cavern Wall Framing with Torches and Ores" 
-          class="cavern-walls-overlay" 
-          id="cavernWalls"
-        />
+        <img src="assets/2/amethyst-design-walls-MWl9p3OZ.webp" alt="Cavern Wall Framing with Torches and Ores"
+          class="cavern-walls-overlay" id="cavernWalls" />
 
         <!-- Z-Plane 3: Glowing Pixel Section Heading -->
         <h2 class="cavern-heading" id="cavernHeading">Why SustainIQ?</h2>
 
         <!-- Z-Plane 4: Cave Scroll Banner with 6 Highlights -->
         <div class="cavern-banner-wrapper" id="cavernBanner">
-          <img 
-            src="assets/2/cave-scroll-banner-BDSRE0tD.webp" 
-            alt="Cave Scroll Banner" 
-            class="cavern-banner-bg" 
-          />
+          <img src="assets/2/cave-scroll-banner-BDSRE0tD.webp" alt="Cave Scroll Banner" class="cavern-banner-bg" />
           <div class="cavern-banner-content">
             <div class="highlights-grid">
 
@@ -719,7 +1193,8 @@
 
               <div class="highlight-card">
                 <h3 class="highlight-title">24-Hour Build Experience</h3>
-                <p class="highlight-desc">Full on-site build at VVCE Sports Complex with all meals &amp; midnight snacks provided.</p>
+                <p class="highlight-desc">Full on-site build at VVCE Sports Complex with all meals &amp; midnight snacks
+                  provided.</p>
               </div>
 
             </div>
@@ -729,6 +1204,103 @@
       </div>
     </div>
   </section>
+
+  <!-- ========================================================================
+       4. AMETHYST GEODE FAQ SECTION (Geode Cave + 3D Crystals + Banner)
+       ======================================================================== -->
+  <section id="faq" class="geode-section">
+    <div class="geode-stage" id="geodeStage">
+      <div class="geode-world" id="geodeWorld">
+
+        <!-- Z-Plane 1: Geode Cave Background (Parallax 0.16x) -->
+        <img src="assets/3/amethyst-design-geo-DsBgQE8Z.webp" alt="Amethyst Geode Cave Background" class="geode-bg"
+          id="geodeBg" />
+
+        <!-- Z-Plane 2: Top Ceiling Overhang (Connecting Cavern to Geode) -->
+        <img src="assets/3/amethyst-design-gceil-CAP80xED.webp" alt="Amethyst Stalactite Crystal Ceiling"
+          class="geode-ceiling" id="geodeCeiling" />
+
+        <!-- Z-Plane 3: Section Heading -->
+        <h2 class="geode-heading" id="geodeHeading">Have Any Questions?</h2>
+
+        <!-- 3D Floating Crystal Elements: Left Cluster (behind banner, translateZ 10px) -->
+        <img src="assets/3/amethyst-design-t0-BuE8bwvU.webp" alt="Floating Amethyst Cluster Left"
+          class="geode-cluster-left" id="geodeClusterLeft" />
+
+        <!-- 3D Floating Crystal Elements: Right Cluster (behind banner, translateZ 5px) -->
+        <img src="assets/3/amethyst-design-t1-BBAJYO5W.webp" alt="Floating Amethyst Cluster Right"
+          class="geode-cluster-right" id="geodeClusterRight" />
+
+        <!-- Z-Plane 4: Amethyst Crystal Banner with Text & FAQ Button (translateZ 35px) -->
+        <div class="geode-banner-wrapper" id="geodeBanner">
+          <img src="assets/3/amethyst-crystal-banner-DqL39yln.webp" alt="Amethyst Crystal Banner"
+            class="geode-banner-bg" id="geodeBannerBg" />
+
+          <!-- 3D Floating Crystal Element: Magic Cube IN FRONT of banner (translateZ 65px) -->
+          <img src="assets/3/amethyst-design-sh7-DTGvUoTg.webp" alt="Floating Amethyst Magic Cube"
+            class="geode-floating-cube" id="geodeFloatingCube" />
+
+          <div class="geode-banner-content">
+            <p class="geode-banner-text">
+              Wondering how<br>
+              SustainIQ 2026 works?<br>
+              Explore our FAQs for<br>
+              quick answers about<br>
+              registration, participation,<br>
+              and submissions. Still have<br>
+              questions? Reach out to us!
+            </p>
+            <div class="geode-faq-btn-container">
+              <a href="#faqModal" class="geode-faq-btn" id="geodeFaqBtn">FAQ</a>
+              <div class="enderman-peek" title="Enderman says: Click for FAQs!">
+                <div class="enderman-head">
+                  <div class="enderman-eye left"></div>
+                  <div class="enderman-eye right"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Z-Plane 5: Bottom Rulebook Transition Overhang (translateZ 20px) -->
+        <img src="assets/3/amethyst-rulebook-transition-C2_jFyOF.webp" alt="Amethyst Rulebook Transition Platform"
+          class="geode-transition" id="geodeTransition" />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Pixel FAQ Modal -->
+  <div class="faq-modal-overlay" id="faqModalOverlay">
+    <div class="faq-modal-card">
+      <div class="faq-modal-header">
+        <h3 class="faq-modal-title">FREQUENTLY ASKED QUESTIONS</h3>
+        <button type="button" class="faq-modal-close" id="faqModalClose" aria-label="Close FAQs">&times;</button>
+      </div>
+      <div class="faq-modal-body">
+        <div class="faq-item">
+          <h4 class="faq-question">⛏ Who is eligible to participate?</h4>
+          <p class="faq-answer">All undergraduate and postgraduate students from colleges and universities across India
+            can participate. Inter-disciplinary teams are strongly encouraged!</p>
+        </div>
+        <div class="faq-item">
+          <h4 class="faq-question">⛏ What is the team size?</h4>
+          <p class="faq-answer">Teams must consist of 2 to 4 members. You can form teams across different engineering
+            departments and institutions.</p>
+        </div>
+        <div class="faq-item">
+          <h4 class="faq-question">⛏ What are the challenge domains?</h4>
+          <p class="faq-answer">Sustainable Energy, Smart Agriculture &amp; Food Systems, Waste &amp; Circular Economy,
+            and Climate &amp; Disaster Resilience.</p>
+        </div>
+        <div class="faq-item">
+          <h4 class="faq-question">⛏ Is food and accommodation provided?</h4>
+          <p class="faq-answer">Yes! The on-site 24-hour hackathon at VVCE Sports Complex includes all meals, midnight
+            refreshments, snacks, and designated rest zones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========================================================================
        ENGINE SCRIPT: Scroll Controller, Canvas Scrub, 3D Tilt & Parallax Engine
@@ -764,6 +1336,21 @@
       const cavernWalls = document.getElementById('cavernWalls');
       const cavernHeading = document.getElementById('cavernHeading');
       const cavernBanner = document.getElementById('cavernBanner');
+
+      // Geode FAQ Layers
+      const geodeSection = document.getElementById('faq');
+      const geodeWorld = document.getElementById('geodeWorld');
+      const geodeBg = document.getElementById('geodeBg');
+      const geodeCeiling = document.getElementById('geodeCeiling');
+      const geodeHeading = document.getElementById('geodeHeading');
+      const geodeClusterLeft = document.getElementById('geodeClusterLeft');
+      const geodeClusterRight = document.getElementById('geodeClusterRight');
+      const geodeBanner = document.getElementById('geodeBanner');
+      const geodeFloatingCube = document.getElementById('geodeFloatingCube');
+      const geodeTransition = document.getElementById('geodeTransition');
+      const geodeFaqBtn = document.getElementById('geodeFaqBtn');
+      const faqModalOverlay = document.getElementById('faqModalOverlay');
+      const faqModalClose = document.getElementById('faqModalClose');
 
       const isDirectAbout = window.location.search.includes('about') || window.location.hash === '#about';
 
@@ -832,6 +1419,10 @@
           const cavernTop = cavernSection ? cavernSection.offsetTop : (heroTotalTrack + h);
           targetScroll = currentScroll = cavernTop - 250;
           window.scrollTo(0, targetScroll);
+        } else if (urlParams.has('faq') || window.location.hash === '#faq') {
+          const faqTop = geodeSection ? geodeSection.offsetTop : (heroTotalTrack + h * 2);
+          targetScroll = currentScroll = faqTop;
+          window.scrollTo(0, targetScroll);
         } else if (isDirectAbout && currentScroll < 100) {
           const aboutTop = aboutSection ? aboutSection.offsetTop : heroTotalTrack;
           targetScroll = currentScroll = aboutTop;
@@ -843,15 +1434,22 @@
         drawFrame(Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.round(heroProgress * (TOTAL_FRAMES - 1)))));
       }
 
-      window.scrollToAbout = function() {
+      window.scrollToAbout = function () {
         const aboutTop = aboutSection ? aboutSection.offsetTop : (heroScrubDist + aboutSlideDist);
         targetScroll = currentScroll = aboutTop;
         window.scrollTo(0, targetScroll);
       };
 
-      window.scrollToCavern = function() {
+      window.scrollToCavern = function () {
         if (cavernSection) {
           targetScroll = currentScroll = cavernSection.offsetTop;
+          window.scrollTo(0, targetScroll);
+        }
+      };
+
+      window.scrollToFaq = function () {
+        if (geodeSection) {
+          targetScroll = currentScroll = geodeSection.offsetTop;
           window.scrollTo(0, targetScroll);
         }
       };
@@ -989,7 +1587,7 @@
       let lastLogoOpacity = -1;
       let isLogoHidden = false;
 
-      function updateHeroLogo(heroProgress) {
+      function updateHeroLProgress) {
         if (!logoContainer) return;
 
         if (heroProgress < APPROACH_END) {
@@ -1036,7 +1634,7 @@
         // Calculate relative parallax scroll offset when About is in/near viewport
         const aboutRect = aboutSection.getBoundingClientRect();
         const viewH = window.innerHeight;
-        
+
         // Progress: 0 when top enters bottom of screen, 1 when fully centered
         const enterProgress = Math.max(0, Math.min(1.5, (viewH - aboutRect.top) / viewH));
         const scrollDelta = (enterProgress - 1.0) * 80;
@@ -1096,7 +1694,7 @@
         if (cavernWalls) {
           const cavernRect = cavernSection.getBoundingClientRect();
           const viewH = window.innerHeight;
-          // Progress as Cavern scrolls through viewport
+          // Progress as Cavern scrollshrowport
           const scrollOffset = Math.max(0, viewH - cavernRect.top);
           // Moves upwards smoothly with scroll (0.14x speed multiplier)
           const wallsUpwardY = -scrollOffset * 0.14;
@@ -1105,12 +1703,71 @@
       }
 
       // ------------------------------------------------------------------------
+      // 3D Amethyst Geode FAQ Section Parallax & 3D Diorama Loop
+      // ------------------------------------------------------------------------
+      function updateGeodeSection(timestamp) {
+        if (!geodeSection || !geodeWorld) return;
+
+        // Geode diorama cursor tilt
+        geodeWorld.style.transform = `rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+
+        const geodeRect = geodeSection.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        // Normalized scroll progress when section is within view range (-1.5 to 1.5)
+        const centerOffset = (geodeRect.top + geodeRect.height * 0.5) - (viewH * 0.5);
+        const scrollNorm = Math.max(-1.5, Math.min(1.5, centerOffset / viewH));
+
+        // Geode Cave Background subtle vertical scroll parallax (0.16x speed)
+        if (geodeBg) {
+          const bgParallaxY = -scrollNorm * 45;
+          geodeBg.style.transform = `translate3d(0, ${bgParallaxY.toFixed(1)}px, -50px) scale(1.1)`;
+        }
+
+        // 3D Floating Crystal Element: Left Cluster (t0) scroll parallax (behind banner, translateZ 10px)
+        if (geodeClusterLeft) {
+          const clusterLeftY = -scrollNorm * 32;
+          const clusterLeftX = -scrollNorm * 8;
+          geodeClusterLeft.style.transform = `translate3d(${clusterLeftX.toFixed(1)}px, ${clusterLeftY.toFixed(1)}px, 10px)`;
+        }
+
+        // 3D Floating Crystal Element: Right Cluster (t1) scroll parallax (behind banner, translateZ 5px)
+        if (geodeClusterRight) {
+          const clusterRightY = -scrollNorm * 40;
+          const clusterRightX = scrollNorm * 10;
+          geodeClusterRight.style.transform = `translate3d(${clusterRightX.toFixed(1)}px, ${clusterRightY.toFixed(1)}px, 5px)`;
+        }
+
+        // 3D Floating Magic Crystal Cube in FRONT of banner (sh7): scroll parallax & rotation (translateZ 65px)
+        if (geodeFloatingCube) {
+          const cubeY = scrollNorm * 35;
+          const cubeRot = -scrollNorm * 12;
+          geodeFloatingCube.style.transform = `translate3d(0, ${cubeY.toFixed(1)}px, 65px) rotate(${cubeRot.toFixed(1)}deg)`;
+        }
+      }
+
+      // Modal Interactive Listeners
+      if (geodeFaqBtn && faqModalOverlay) {
+        geodeFaqBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          faqModalOverlay.classList.add('active');
+        });
+      }
+      if (faqModalClose && faqModalOverlay) {
+        faqModalClose.addEventListener('click', () => {
+          faqModalOverlay.classList.remove('active');
+        });
+        faqModalOverlay.addEventListener('click', (e) => {
+          if (e.target === faqModalOverlay) faqModalOverlay.classList.remove('active');
+        });
+      }
+
+      // ------------------------------------------------------------------------
       // Master 60fps Animation Loop
       // ------------------------------------------------------------------------
       function renderLoop(timestamp) {
         // Smooth scroll interpolation
         const diff = targetScroll - currentScroll;
-        if (Math.abs(diff) > 0.05) {
+        if (Math.abs(diff) > 0.4) {
           currentScroll += diff * LERP_EASE;
           window.scrollTo(0, Math.round(currentScroll));
         } else {
@@ -1137,6 +1794,9 @@
         // Underground Cavern 3D diorama & bedrock parallax
         updateCavernSection(timestamp);
 
+        // Amethyst Geode 3D diorama & crystal hover animations
+        updateGeodeSection(timestamp);
+
         requestAnimationFrame(renderLoop);
       }
 
@@ -1149,4 +1809,5 @@
     })();
   </script>
 </body>
+
 </html>
